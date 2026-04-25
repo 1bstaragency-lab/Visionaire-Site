@@ -67,28 +67,28 @@ export default function Portfolio() {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative aspect-video w-full overflow-hidden rounded-md group bg-zinc-900 shadow-2xl ring-1 ring-white/5 flex items-center justify-center self-center"
+              className="relative w-full pt-[56.25%] overflow-hidden rounded-md group bg-zinc-900 shadow-2xl ring-1 ring-white/5"
             >
-              {video.type === "local" ? (
-                <NativeVideo src={video.src!} />
-              ) : (
-                <>
-                  <div className="absolute inset-0 z-0 bg-gradient-to-tr from-zinc-800/20 to-transparent pointer-events-none" />
-                  <div className="w-full h-full">
+              <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                {video.type === "local" ? (
+                  <NativeVideo src={video.src!} />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 z-0 bg-gradient-to-tr from-zinc-800/20 to-transparent pointer-events-none" />
                     <NativeVideo src={`/videos/youtube/${video.id}.mp4`} />
-                  </div>
-                </>
-              )}
-              
-              {/* Title / Brand Logo Overlay */}
-              <div className="absolute bottom-6 left-6 z-10 pointer-events-none drop-shadow-lg opacity-90">
-                {video.brand ? (
-                  <BrandLogo brand={video.brand} className="text-white text-3xl md:text-5xl" />
-                ) : video.title ? (
-                  <h3 className="text-white text-xl md:text-2xl font-blocky tracking-[0.05em] uppercase">
-                    {video.title}
-                  </h3>
-                ) : null}
+                  </>
+                )}
+                
+                {/* Title / Brand Logo Overlay */}
+                <div className="absolute bottom-6 left-6 z-10 pointer-events-none drop-shadow-lg opacity-90">
+                  {video.brand ? (
+                    <BrandLogo brand={video.brand} className="text-white text-3xl md:text-5xl" />
+                  ) : video.title ? (
+                    <h3 className="text-white text-xl md:text-2xl font-blocky tracking-[0.05em] uppercase">
+                      {video.title}
+                    </h3>
+                  ) : null}
+                </div>
               </div>
             </motion.div>
           ))}
