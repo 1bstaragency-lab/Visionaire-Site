@@ -83,9 +83,9 @@ export default function Portfolio() {
               {/* Title / Brand Logo Overlay */}
               <div className="absolute bottom-6 left-6 z-10 pointer-events-none drop-shadow-lg opacity-90">
                 {video.brand ? (
-                  <BrandLogo brand={video.brand} className="text-white text-2xl md:text-4xl" />
+                  <BrandLogo brand={video.brand} className="text-white text-3xl md:text-5xl" />
                 ) : video.title ? (
-                  <h3 className="text-white text-xs md:text-sm font-medium tracking-[0.15em] uppercase">
+                  <h3 className="text-white text-xl md:text-2xl font-blocky tracking-[0.05em] uppercase">
                     {video.title}
                   </h3>
                 ) : null}

@@ -14,7 +14,7 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
   
   if (brandUpper === "ASICS") {
     return (
-      <div className={`font-sans font-black italic tracking-tighter ${className}`}>
+      <div className={`font-blocky italic tracking-tight ${className}`}>
         ASICS
       </div>
     );
@@ -22,7 +22,7 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
 
   if (brandUpper === "CONVERSE" || brandUpper === "CDG X CONVERSE") {
     return (
-      <div className={`font-sans font-bold tracking-widest ${className}`}>
+      <div className={`font-blocky tracking-widest ${className}`}>
         {brandUpper}
       </div>
     );
@@ -30,7 +30,7 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
 
   if (brandUpper === "ADIDAS") {
     return (
-      <div className={`font-sans font-bold tracking-tight lowercase ${className}`}>
+      <div className={`font-blocky tracking-normal lowercase ${className}`}>
         adidas
       </div>
     );
@@ -38,7 +38,7 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
 
   if (brandUpper === "LEVI'S") {
     return (
-      <div className={`font-sans font-black tracking-tighter uppercase ${className}`}>
+      <div className={`font-blocky tracking-tighter uppercase ${className}`}>
         LEVI'S
       </div>
     );
@@ -62,7 +62,7 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
 
   if (brandUpper === "TIMBERLAND") {
     return (
-      <div className={`font-sans font-bold tracking-tight uppercase ${className}`}>
+      <div className={`font-blocky tracking-wide uppercase ${className}`}>
         TIMBERLAND
       </div>
     );
@@ -70,7 +70,7 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
 
   // Fallback for any other brand
   return (
-    <div className={`font-sans font-bold tracking-widest uppercase ${className}`}>
+    <div className={`font-blocky tracking-widest uppercase ${className}`}>
       {brandUpper}
     </div>
   );
