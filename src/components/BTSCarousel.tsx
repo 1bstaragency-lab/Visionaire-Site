@@ -22,7 +22,7 @@ export const BTSCarousel = () => {
   const [scope, animate] = useAnimate()
 
   useEffect(() => {
-    animate("img", { opacity: [0, 1] }, { duration: 0.5, delay: stagger(0.15) })
+    animate("video", { opacity: [0, 1] }, { duration: 0.5, delay: stagger(0.15) })
   }, [])
 
   return (
