@@ -32,7 +32,7 @@ export default function GiveawayForm() {
       <div className="text-center mb-6">
         <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">Win a Free Commercial</h2>
         <p className="text-zinc-400 text-sm">Enter below for a chance to win a free video production package for your brand.</p>
-        <p className="text-zinc-300 text-xs mt-2 uppercase tracking-widest border border-white/10 inline-block px-3 py-1 rounded-full">
+        <p className="text-zinc-300 text-[8px] mt-2 uppercase tracking-widest border border-white/10 inline-block px-2 py-0.5 rounded-full">
           *We provide full crew & production services
         </p>
       </div>
