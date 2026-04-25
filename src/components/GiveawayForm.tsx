@@ -13,7 +13,7 @@ export default function GiveawayForm() {
 
   if (state?.success) {
     return (
-      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-8 text-center my-8 shadow-2xl">
+      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-16 px-8 text-center my-8 shadow-2xl">
         <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">You're Entered!</h2>
         
         {state.isUnderTwoYears && (
