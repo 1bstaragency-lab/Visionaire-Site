@@ -33,17 +33,17 @@ export default function GiveawayForm() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-3 mb-8">
-        <div className="bg-gradient-to-r from-[#FFD700]/10 to-transparent border-l-4 border-[#FFD700] p-3 rounded-r-md">
-          <p className="text-[#FFD700] text-xs font-bold uppercase tracking-widest mb-1">1st Place — Gold</p>
+      <div className="flex flex-col gap-3 mb-8 bg-zinc-950 border border-white/5 p-4 rounded-lg shadow-inner">
+        <div className="bg-gradient-to-b from-[#FFD700]/10 to-transparent border border-[#FFD700]/20 p-4 rounded-md text-center flex flex-col items-center justify-center">
+          <p className="text-[#FFD700] text-sm font-bold uppercase tracking-widest mb-1">1st Place — Gold</p>
           <p className="text-white text-sm">15-30 second editorial narrative or fashion commercial.</p>
         </div>
-        <div className="bg-gradient-to-r from-[#C0C0C0]/10 to-transparent border-l-4 border-[#C0C0C0] p-3 rounded-r-md">
-          <p className="text-[#C0C0C0] text-xs font-bold uppercase tracking-widest mb-1">2nd Place — Silver</p>
+        <div className="bg-gradient-to-b from-[#C0C0C0]/10 to-transparent border border-[#C0C0C0]/20 p-4 rounded-md text-center flex flex-col items-center justify-center">
+          <p className="text-[#C0C0C0] text-sm font-bold uppercase tracking-widest mb-1">2nd Place — Silver</p>
           <p className="text-white text-sm">2 High-End Instagram Reels.</p>
         </div>
-        <div className="bg-gradient-to-r from-[#CD7F32]/10 to-transparent border-l-4 border-[#CD7F32] p-3 rounded-r-md">
-          <p className="text-[#CD7F32] text-xs font-bold uppercase tracking-widest mb-1">3rd Place — Bronze</p>
+        <div className="bg-gradient-to-b from-[#CD7F32]/10 to-transparent border border-[#CD7F32]/20 p-4 rounded-md text-center flex flex-col items-center justify-center">
+          <p className="text-[#CD7F32] text-sm font-bold uppercase tracking-widest mb-1">3rd Place — Bronze</p>
           <p className="text-white text-sm">50% off any commercial production.</p>
         </div>
       </div>
