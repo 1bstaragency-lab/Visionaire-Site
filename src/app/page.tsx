@@ -10,11 +10,11 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 const portfolioVideos = [
   { type: "local", id: "converse", src: "/videos/converse.mp4", brand: "Converse" },
   { type: "youtube", id: "3adRUaYNmJ4", brand: "CDG x Converse" },
-  { type: "youtube", id: "3T3Dhc5fXxc", brand: "Agent Provocateur" },
   { type: "youtube", id: "L-iVcooZdt8", brand: "SKIMS" },
   { type: "local", id: "asics", src: "/videos/asics.mp4", brand: "ASICS" },
   { type: "youtube", id: "QyLYTi9qkSg", brand: "adidas" },
   { type: "youtube", id: "V7eHmKc31Bg", brand: "Timberland" },
+  { type: "youtube", id: "3T3Dhc5fXxc", brand: "Agent Provocateur" },
   { type: "youtube", id: "q9EzrDZkvLk", brand: "Levi's" },
   { type: "youtube", id: "f-XYpu7gYuw", title: "Scotty Apex - ESCAPE THE FATE" },
   { type: "youtube", id: "aUiCkuA4GyY", title: "Scotty Apex - partners in cryme" },
