@@ -46,13 +46,9 @@ export default function GiveawayForm() {
           <p className="text-[#CD7F32] text-sm font-bold uppercase tracking-widest mb-1">3rd Place — Bronze</p>
           <p className="text-white text-sm">50% off any commercial production.</p>
         </div>
-        <div className="bg-gradient-to-b from-white/10 to-transparent border border-white/20 p-4 rounded-md text-center flex flex-col items-center justify-center">
-          <p className="text-white text-sm font-bold uppercase tracking-widest mb-1">4th Place</p>
-          <p className="text-zinc-300 text-sm">25% off any commercial production.</p>
-        </div>
-        <div className="bg-gradient-to-b from-white/10 to-transparent border border-white/20 p-4 rounded-md text-center flex flex-col items-center justify-center">
-          <p className="text-white text-sm font-bold uppercase tracking-widest mb-1">5th Place</p>
-          <p className="text-zinc-300 text-sm">50% off if you refer a friend or another brand.</p>
+        <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-3 rounded-md text-center mt-2">
+          <p className="text-zinc-300 text-xs tracking-wider uppercase mb-1">Plus 7 Additional Winners</p>
+          <p className="text-zinc-400 text-xs">We will randomly select 7 other brands to receive smaller production prizes. We will reach out individually!</p>
         </div>
       </div>
 
