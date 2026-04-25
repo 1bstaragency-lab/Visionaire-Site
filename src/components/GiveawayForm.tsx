@@ -59,7 +59,7 @@ export default function GiveawayForm() {
       )}
 
       <form action={formAction} className="flex flex-col gap-5">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 text-center">
           <label htmlFor="name" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">What's your name?</label>
           <input 
             type="text" 
@@ -67,11 +67,11 @@ export default function GiveawayForm() {
             name="name" 
             required 
             placeholder="John Doe"
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
           />
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 text-center">
           <label htmlFor="phone" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">What's your number?</label>
           <input 
             type="tel" 
@@ -79,11 +79,11 @@ export default function GiveawayForm() {
             name="phone" 
             required 
             placeholder="(555) 123-4567"
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
           />
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 text-center">
           <label htmlFor="duration" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">How long have you had your brand?</label>
           <input 
             type="text" 
@@ -91,14 +91,14 @@ export default function GiveawayForm() {
             name="brand_duration" 
             required 
             placeholder="e.g. 2 years, Just starting, etc."
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
           />
         </div>
 
         <button 
           type="submit" 
           disabled={isPending}
-          className="mt-4 w-full bg-white text-black font-semibold uppercase tracking-widest py-4 rounded-md hover:bg-zinc-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="mt-4 w-full bg-white text-black font-semibold uppercase tracking-widest py-4 rounded-md hover:bg-zinc-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-center"
         >
           {isPending ? "Entering..." : "Enter Giveaway"}
         </button>
