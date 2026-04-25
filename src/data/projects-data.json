@@ -1,0 +1,117 @@
+{
+  "musicVideos": [
+    {
+      "slug": "scotty-apex-escape-the-fate",
+      "title": "ESCAPE THE FATE",
+      "artist": "Scotty Apex",
+      "youtubeId": "f-XYpu7gYuw",
+      "url": "https://www.youtube.com/watch?v=f-XYpu7gYuw",
+      "duration": 256,
+      "poster": "https://i.ytimg.com/vi/f-XYpu7gYuw/maxresdefault.jpg"
+    },
+    {
+      "slug": "scotty-apex-partners-in-cryme",
+      "title": "partners in cryme",
+      "artist": "Scotty Apex",
+      "youtubeId": "aUiCkuA4GyY",
+      "url": "https://www.youtube.com/watch?v=aUiCkuA4GyY",
+      "duration": 202,
+      "poster": "https://i.ytimg.com/vi/aUiCkuA4GyY/maxresdefault.jpg"
+    },
+    {
+      "slug": "scotty-apex-eternal",
+      "title": "ETERNAL",
+      "artist": "Scotty Apex",
+      "youtubeId": "RAZwSj2puyQ",
+      "url": "https://www.youtube.com/watch?v=RAZwSj2puyQ",
+      "duration": 237,
+      "poster": "https://i.ytimg.com/vi/RAZwSj2puyQ/maxresdefault.jpg"
+    },
+    {
+      "slug": "scotty-apex-shot-in-the-dark",
+      "title": "SHOT IN THE DARK",
+      "artist": "Scotty Apex",
+      "youtubeId": "CvAo-ixDS3c",
+      "url": "https://www.youtube.com/watch?v=CvAo-ixDS3c",
+      "duration": 168,
+      "poster": "https://i.ytimg.com/vi/CvAo-ixDS3c/maxresdefault.jpg"
+    },
+    {
+      "slug": "xrarestboy-apple-pay",
+      "title": "Apple Pay",
+      "artist": "Xrarestboy",
+      "youtubeId": "eWJCHiBNJqE",
+      "url": "https://www.youtube.com/watch?v=eWJCHiBNJqE",
+      "duration": 179,
+      "poster": "https://i.ytimg.com/vi/eWJCHiBNJqE/maxresdefault.jpg"
+    },
+    {
+      "slug": "laylow-trust",
+      "title": "Trust",
+      "artist": "Laylow!",
+      "youtubeId": "mpk0K9XMtOM",
+      "url": "https://www.youtube.com/watch?v=mpk0K9XMtOM",
+      "duration": 131,
+      "poster": "https://i.ytimg.com/vi/mpk0K9XMtOM/maxresdefault.jpg"
+    },
+    {
+      "slug": "scotty-apex-jay-versace-wherever-u-are",
+      "title": "WHEREVER U ARE",
+      "artist": "Scotty Apex & Jay Versace",
+      "youtubeId": "3mrZBy57Fk0",
+      "url": "https://www.youtube.com/watch?v=3mrZBy57Fk0",
+      "duration": 176,
+      "poster": "https://i.ytimg.com/vi/3mrZBy57Fk0/maxresdefault.jpg"
+    }
+  ],
+  "commercials": [
+    {
+      "slug": "converse",
+      "client": "Converse",
+      "title": "Converse",
+      "source": "instagram-downloaded",
+      "instagramUrl": "https://www.instagram.com/p/C4tXdsxvEJT/",
+      "localFolder": "video-assets/commercials/converse/",
+      "heroFile": "converse-slide-1.mp4",
+      "heroAspect": "16:9",
+      "heroResolution": "1280x720",
+      "heroDuration": 29.4,
+      "supportingFiles": ["converse-slide-2.mp4 (2.5s)", "converse-slide-3.mp4 (2.6s)", "converse-slide-4.mp4 (5.4s)"],
+      "notes": "Slide 1 is the clear hero \u2014 29s at 720p landscape. Supporting clips are 2-5s and work as either B-roll on a detail page or hover micro-previews."
+    },
+    {
+      "slug": "asics",
+      "client": "ASICS",
+      "title": "ASICS",
+      "source": "instagram-downloaded",
+      "instagramUrl": "https://www.instagram.com/p/DDAZFBEvmjE/",
+      "localFolder": "video-assets/commercials/asics/",
+      "heroFile": "asics-slide-1.mp4",
+      "heroAspect": "~4:3 (964x720)",
+      "heroResolution": "964x720",
+      "heroDuration": 54.1,
+      "notes": "Single 54s video at an unusual 964x720 ratio (close to 4:3). Longest of the three commercials \u2014 strong candidate for the showreel hero if a formal reel isn't cut yet."
+    },
+    {
+      "slug": "gap",
+      "client": "GAP",
+      "title": "GAP",
+      "source": "instagram-downloaded",
+      "instagramUrl": "https://www.instagram.com/p/C59cqQ5Py-D/",
+      "localFolder": "video-assets/commercials/gap/",
+      "heroFile": "gap-slide-1.mp4",
+      "heroAspect": "4:5 vertical (720x900)",
+      "heroResolution": "720x900",
+      "heroDuration": 30.2,
+      "supportingFiles": ["gap-slide-2.mp4 (16s)", "gap-slide-3.mp4 (15s)", "gap-slide-4.mp4 (15.5s)"],
+      "notes": "All 4 clips are 4:5 vertical at 720x900. Slide 1 is the 30s hero. Three ~15s supporting cuts are strong enough to cycle as a detail-page gallery, or use 2-3 of them in the Short Form wall since they're already vertical."
+    }
+  ],
+  "shortForm": [],
+  "meta": {
+    "instagramHandle": "@VISIONSAIRE",
+    "instagramUrl": "https://instagram.com/visionsaire",
+    "domain": "visionsaire.com",
+    "notes": "Commercials and short-form content live on IG @VISIONSAIRE \u2014 need to either (a) download MP4s from IG and self-host, or (b) embed IG posts via oEmbed. Option (a) recommended for Short Form wall to keep it fast; option (b) acceptable for Commercials grid if there aren't many."
+  }
+}

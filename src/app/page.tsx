@@ -1,65 +1,129 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from "react";
+import { motion } from "framer-motion";
+import NativeVideo from "@/components/NativeVideo";
+
+// Combined portfolio videos so they can be reordered seamlessly.
+// The first video on the page (ASICS) was requested to be moved to the 5th position.
+const portfolioVideos = [
+  { type: "local", id: "converse", src: "/videos/converse.mp4" },
+  { type: "youtube", id: "3adRUaYNmJ4" },
+  { type: "youtube", id: "3T3Dhc5fXxc" },
+  { type: "youtube", id: "L-iVcooZdt8" },
+  { type: "local", id: "asics", src: "/videos/asics.mp4" }, // ASICS is now 5th
+  { type: "youtube", id: "QyLYTi9qkSg" },
+  { type: "youtube", id: "V7eHmKc31Bg" },
+  { type: "youtube", id: "q9EzrDZkvLk" },
+  { type: "youtube", id: "f-XYpu7gYuw" },
+  { type: "youtube", id: "aUiCkuA4GyY" },
+  { type: "youtube", id: "RAZwSj2puyQ" },
+  { type: "youtube", id: "CvAo-ixDS3c" },
+  { type: "youtube", id: "eWJCHiBNJqE" },
+  { type: "youtube", id: "mpk0K9XMtOM" },
+  { type: "youtube", id: "3mrZBy57Fk0" },
+  { type: "youtube", id: "ckxOuNMgCq0" }
+];
+
+export default function Portfolio() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans flex flex-col items-center justify-between">
+      {/* Header with Logo */}
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full flex justify-center pt-12 pb-6 md:pt-16 md:pb-8"
+      >
+        <motion.img 
+          src="/logo.png" 
+          alt="Visionaire Logo" 
+          className="h-16 md:h-24 object-contain invert"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+      </motion.header>
+
+      {/* Video Grid */}
+      <section className="w-full max-w-4xl px-4 md:px-8 flex-grow flex flex-col items-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+          className="grid grid-cols-1 gap-12 md:gap-16 lg:gap-24 mb-16 w-full"
+        >
+          {portfolioVideos.map((video, idx) => (
+            <motion.div
+              key={`${video.type}-${video.id}`}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative aspect-video w-full overflow-hidden rounded-md group bg-zinc-900 shadow-2xl ring-1 ring-white/5 flex items-center justify-center self-center"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+              {video.type === "local" ? (
+                <NativeVideo src={video.src!} />
+              ) : (
+                <>
+                  <div className="absolute inset-0 z-0 bg-gradient-to-tr from-zinc-800/20 to-transparent pointer-events-none" />
+                  <div className="w-full h-full">
+                    <NativeVideo src={`/videos/youtube/${video.id}.mp4`} />
+                  </div>
+                </>
+              )}
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Footer with Socials */}
+      <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        className="w-full py-16 mt-16 border-t border-white/5 flex flex-col items-center gap-6"
+      >
+        <div className="flex gap-8">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            className="text-zinc-500 hover:text-white transition-colors duration-300"
+            aria-label="Instagram"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            className="text-zinc-500 hover:text-white transition-colors duration-300"
+            aria-label="YouTube"
           >
-            Documentation
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+          <a
+            href="#"
+            className="text-zinc-500 hover:text-white transition-colors duration-300"
+            aria-label="Twitter"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
+          <a
+            href="mailto:contact@visionaire.com"
+            className="text-zinc-500 hover:text-white transition-colors duration-300"
+            aria-label="Email"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </a>
         </div>
-      </main>
-    </div>
+        <p className="text-zinc-600 text-xs tracking-widest uppercase">
+          &copy; {new Date().getFullYear()} Visionaire Productions. All rights reserved.
+        </p>
+      </motion.footer>
+    </main>
   );
 }
