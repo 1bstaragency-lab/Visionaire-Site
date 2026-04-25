@@ -28,7 +28,7 @@ const portfolioVideos = [
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans flex flex-col items-center justify-between">
+    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans flex flex-col items-center justify-between overflow-x-hidden">
       {/* Header with Logo */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
