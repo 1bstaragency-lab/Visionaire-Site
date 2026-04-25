@@ -25,9 +25,27 @@ export default function GiveawayForm() {
       {/* Subtle chrome gradient accent at the top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zinc-600 via-white to-zinc-600 opacity-50" />
       
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">Win a Free Commercial</h2>
         <p className="text-zinc-400 text-sm">Enter below for a chance to win a free video production package for your brand.</p>
+        <p className="text-zinc-300 text-xs mt-2 uppercase tracking-widest border border-white/10 inline-block px-3 py-1 rounded-full">
+          *We provide full crew & production services
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-3 mb-8">
+        <div className="bg-gradient-to-r from-[#FFD700]/10 to-transparent border-l-4 border-[#FFD700] p-3 rounded-r-md">
+          <p className="text-[#FFD700] text-xs font-bold uppercase tracking-widest mb-1">1st Place — Gold</p>
+          <p className="text-white text-sm">15-30 second editorial narrative or fashion commercial.</p>
+        </div>
+        <div className="bg-gradient-to-r from-[#C0C0C0]/10 to-transparent border-l-4 border-[#C0C0C0] p-3 rounded-r-md">
+          <p className="text-[#C0C0C0] text-xs font-bold uppercase tracking-widest mb-1">2nd Place — Silver</p>
+          <p className="text-white text-sm">2 High-End Instagram Reels.</p>
+        </div>
+        <div className="bg-gradient-to-r from-[#CD7F32]/10 to-transparent border-l-4 border-[#CD7F32] p-3 rounded-r-md">
+          <p className="text-[#CD7F32] text-xs font-bold uppercase tracking-widest mb-1">3rd Place — Bronze</p>
+          <p className="text-white text-sm">50% off any commercial production.</p>
+        </div>
       </div>
 
       {state?.message && !state?.success && (
