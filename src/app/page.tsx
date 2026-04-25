@@ -3,26 +3,27 @@
 import React from "react";
 import { motion } from "framer-motion";
 import NativeVideo from "@/components/NativeVideo";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 // Combined portfolio videos so they can be reordered seamlessly.
 // The first video on the page (ASICS) was requested to be moved to the 5th position.
 const portfolioVideos = [
-  { type: "local", id: "converse", src: "/videos/converse.mp4" },
-  { type: "youtube", id: "3adRUaYNmJ4" },
-  { type: "youtube", id: "3T3Dhc5fXxc" },
-  { type: "youtube", id: "L-iVcooZdt8" },
-  { type: "local", id: "asics", src: "/videos/asics.mp4" }, // ASICS is now 5th
-  { type: "youtube", id: "QyLYTi9qkSg" },
-  { type: "youtube", id: "V7eHmKc31Bg" },
-  { type: "youtube", id: "q9EzrDZkvLk" },
-  { type: "youtube", id: "f-XYpu7gYuw" },
-  { type: "youtube", id: "aUiCkuA4GyY" },
-  { type: "youtube", id: "RAZwSj2puyQ" },
-  { type: "youtube", id: "CvAo-ixDS3c" },
-  { type: "youtube", id: "eWJCHiBNJqE" },
-  { type: "youtube", id: "mpk0K9XMtOM" },
-  { type: "youtube", id: "3mrZBy57Fk0" },
-  { type: "youtube", id: "ckxOuNMgCq0" }
+  { type: "local", id: "converse", src: "/videos/converse.mp4", brand: "Converse" },
+  { type: "youtube", id: "3adRUaYNmJ4", brand: "CDG x Converse" },
+  { type: "youtube", id: "3T3Dhc5fXxc", brand: "Agent Provocateur" },
+  { type: "youtube", id: "L-iVcooZdt8", brand: "SKIMS" },
+  { type: "local", id: "asics", src: "/videos/asics.mp4", brand: "ASICS" },
+  { type: "youtube", id: "QyLYTi9qkSg", brand: "adidas" },
+  { type: "youtube", id: "V7eHmKc31Bg", brand: "Timberland" },
+  { type: "youtube", id: "q9EzrDZkvLk", brand: "Levi's" },
+  { type: "youtube", id: "f-XYpu7gYuw", title: "Scotty Apex - ESCAPE THE FATE" },
+  { type: "youtube", id: "aUiCkuA4GyY", title: "Scotty Apex - partners in cryme" },
+  { type: "youtube", id: "RAZwSj2puyQ", title: "Scotty Apex - ETERNAL" },
+  { type: "youtube", id: "CvAo-ixDS3c", title: "Scotty Apex - SHOT IN THE DARK" },
+  { type: "youtube", id: "eWJCHiBNJqE", title: "Xrarestboy - Apple Pay" },
+  { type: "youtube", id: "mpk0K9XMtOM", title: "Laylow! - Trust" },
+  { type: "youtube", id: "3mrZBy57Fk0", title: "Scotty Apex & Jay Versace - WHEREVER U ARE" },
+  { type: "youtube", id: "ckxOuNMgCq0", title: "Scotty Apex - FADE" }
 ];
 
 export default function Portfolio() {
@@ -78,6 +79,17 @@ export default function Portfolio() {
                   </div>
                 </>
               )}
+              
+              {/* Title / Brand Logo Overlay */}
+              <div className="absolute bottom-6 left-6 z-10 pointer-events-none drop-shadow-lg opacity-90">
+                {video.brand ? (
+                  <BrandLogo brand={video.brand} className="text-white text-2xl md:text-4xl" />
+                ) : video.title ? (
+                  <h3 className="text-white text-xs md:text-sm font-medium tracking-[0.15em] uppercase">
+                    {video.title}
+                  </h3>
+                ) : null}
+              </div>
             </motion.div>
           ))}
         </motion.div>
