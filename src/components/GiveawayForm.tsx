@@ -47,8 +47,8 @@ export default function GiveawayForm() {
           <p className="text-white text-xs">50% off any commercial production.</p>
         </div>
         <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-2 rounded-md text-center mt-1">
-          <p className="text-zinc-300 text-[10px] tracking-wider uppercase mb-0.5">Plus 7 Additional Winners</p>
-          <p className="text-zinc-400 text-[10px] leading-tight">We will randomly select 7 other brands to receive smaller production prizes. We will reach out individually!</p>
+          <p className="text-zinc-300 text-[10px] tracking-wider uppercase mb-0.5">Plus 2 Additional Winners</p>
+          <p className="text-zinc-400 text-[10px] leading-tight">We will randomly select 2 other brands to receive smaller production prizes. We will reach out individually!</p>
         </div>
       </div>
 
