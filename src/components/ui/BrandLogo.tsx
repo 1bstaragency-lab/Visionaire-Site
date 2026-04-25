@@ -8,24 +8,21 @@ interface BrandLogoProps {
 export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
   const brandUpper = brand.toUpperCase();
   
-  // Map brands to their official domains to fetch their real logos
-  const brandDomains: Record<string, string> = {
-    "ASICS": "asics.com",
-    "CONVERSE": "converse.com",
-    "CDG X CONVERSE": "converse.com",
-    "ADIDAS": "adidas.com",
-    "LEVI'S": "levi.com",
-    "SKIMS": "skims.com",
-    "AGENT PROVOCATEUR": "agentprovocateur.com",
-    "TIMBERLAND": "timberland.com"
+  // Brands that we have local SVG files for
+  const localSvgBrands: Record<string, string> = {
+    "ASICS": "asics.svg",
+    "CONVERSE": "converse.svg",
+    "CDG X CONVERSE": "converse.svg",
+    "ADIDAS": "adidas.svg",
+    "LEVI'S": "levis.svg",
   };
 
-  const domain = brandDomains[brandUpper];
+  const svgFile = localSvgBrands[brandUpper];
 
-  if (domain) {
+  if (svgFile) {
     return (
       <img 
-        src={`https://logo.clearbit.com/${domain}`} 
+        src={`/logos/${svgFile}`} 
         alt={`${brand} Logo`}
         className={`object-contain ${className}`}
         style={{ 
@@ -37,7 +34,18 @@ export function BrandLogo({ brand, className = "" }: BrandLogoProps) {
     );
   }
 
-  // Fallback for any other brand without a known domain
+  // Fallback typographic logos for brands without SVGs (loads instantly, no broken images)
+  if (brandUpper === "SKIMS") {
+    return <div className={`font-sans font-medium tracking-[0.2em] uppercase ${className}`}>SKIMS</div>;
+  }
+  if (brandUpper === "AGENT PROVOCATEUR") {
+    return <div className={`font-serif font-light tracking-[0.1em] uppercase ${className}`}>AGENT PROVOCATEUR</div>;
+  }
+  if (brandUpper === "TIMBERLAND") {
+    return <div className={`font-blocky tracking-wide uppercase ${className}`}>TIMBERLAND</div>;
+  }
+
+  // Generic fallback
   return (
     <div className={`font-blocky tracking-widest uppercase ${className}`}>
       {brandUpper}
