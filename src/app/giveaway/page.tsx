@@ -1,12 +1,13 @@
 import React from "react";
 import GiveawayForm from "@/components/GiveawayForm";
+import { BTSCarousel } from "@/components/BTSCarousel";
 import Link from "next/link";
 
 export default function GiveawayPage() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans flex flex-col items-center justify-center p-4 md:p-8">
+    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans flex flex-col items-center p-4 md:p-8 overflow-hidden">
       
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-4xl mt-8">
         <div className="flex flex-col items-center justify-center mb-12 gap-4">
           <div className="flex items-center justify-center gap-4 md:gap-8">
             <Link href="/">
@@ -33,6 +34,10 @@ export default function GiveawayPage() {
         </div>
 
         <GiveawayForm />
+      </div>
+
+      <div className="w-screen mt-24">
+        <BTSCarousel />
       </div>
 
     </main>

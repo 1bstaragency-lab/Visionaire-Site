@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import NativeVideo from "@/components/NativeVideo";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 
-import { BTSCarousel } from "@/components/BTSCarousel";
-
 // Combined portfolio videos so they can be reordered seamlessly.
 // The first video on the page (ASICS) was requested to be moved to the 5th position.
 const portfolioVideos = [
@@ -96,9 +94,6 @@ export default function Portfolio() {
           ))}
         </motion.div>
       </section>
-
-      {/* Behind the Scenes Carousel */}
-      <BTSCarousel />
 
       {/* Footer with Socials */}
       <motion.footer

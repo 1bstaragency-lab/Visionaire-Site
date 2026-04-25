@@ -99,6 +99,18 @@ export default function GiveawayForm() {
           />
         </div>
 
+        <div className="flex flex-col gap-2 text-center">
+          <label htmlFor="visuals" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">Are visuals important to your brand's identity?</label>
+          <input 
+            type="text" 
+            id="visuals" 
+            name="visuals_importance" 
+            required 
+            placeholder="e.g. Yes, absolutely!"
+            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+          />
+        </div>
+
         <button 
           type="submit" 
           disabled={isPending}

@@ -10,8 +10,9 @@ export async function submitGiveawayEntry(prevState: any, formData: FormData) {
   const name = formData.get("name") as string;
   const phone = formData.get("phone") as string;
   const brand_duration = formData.get("brand_duration") as string;
+  const visuals_importance = formData.get("visuals_importance") as string;
 
-  if (!name || !phone || !brand_duration) {
+  if (!name || !phone || !brand_duration || !visuals_importance) {
     return { success: false, message: "All fields are required." };
   }
 
@@ -26,7 +27,7 @@ export async function submitGiveawayEntry(prevState: any, formData: FormData) {
     const { error } = await supabase
       .from("giveaway_entries")
       .insert([
-        { name, phone, brand_duration }
+        { name, phone, brand_duration, visuals_importance }
       ]);
 
     if (error) {
