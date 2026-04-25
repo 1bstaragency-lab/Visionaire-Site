@@ -19,11 +19,13 @@ export default function GiveawayPage() {
             
             <span className="text-zinc-600 text-xl font-light">X</span>
             
-            {/* Fallback typography logo for Atlanta Streetwear Market until SVG is provided */}
-            <div className="h-10 md:h-14 flex items-center">
-              <span className="font-blocky text-2xl md:text-3xl tracking-widest text-white leading-none mt-1">
-                ATLANTA STREETWEAR MARKET
-              </span>
+            {/* Atlanta Streetwear Market Logo */}
+            <div className="flex items-center">
+              <img 
+                src="/logos/aswm.png" 
+                alt="Atlanta Streetwear Market Logo" 
+                className="h-10 md:h-14 object-contain transition-transform hover:scale-105"
+              />
             </div>
           </div>
           
