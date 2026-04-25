@@ -45,10 +45,11 @@ export default function NativeVideo({ src }: NativeVideoProps) {
     <video
       ref={videoRef}
       src={src}
-      className={`w-full h-full object-cover transition-opacity duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}
+      className="w-full h-full object-cover"
       loop
       muted
       playsInline
+      autoPlay
       controls={false}
     />
   );
