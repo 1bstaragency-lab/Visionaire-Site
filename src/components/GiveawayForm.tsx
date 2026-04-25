@@ -15,7 +15,23 @@ export default function GiveawayForm() {
     return (
       <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-8 text-center my-8 shadow-2xl">
         <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">You're Entered!</h2>
-        <p className="text-zinc-400">
+        
+        {state.isUnderTwoYears && (
+          <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 p-5 rounded-lg my-6 shadow-inner">
+            <p className="text-white font-bold tracking-widest uppercase text-sm mb-2">Want an extra entry?</p>
+            <p className="text-zinc-300 text-sm mb-4">Since your brand is less than 2 years old, we want to give you an extra chance to win!</p>
+            <a 
+              href="https://instagram.com/visionaire.productions" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="inline-block bg-white text-black font-semibold uppercase tracking-widest py-2 px-6 text-xs rounded-md hover:bg-zinc-200 transition-colors duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+            >
+              Follow us on IG
+            </a>
+          </div>
+        )}
+
+        <p className="text-zinc-400 mt-4">
           Good luck! We'll reach out if you win any of the prizes.
           <br /><br />
           <span className="text-zinc-500 italic text-sm">psst... even if you don't win, we will still show love at a future shoot if you book with us!</span>

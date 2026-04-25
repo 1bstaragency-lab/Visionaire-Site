@@ -35,7 +35,22 @@ export async function submitGiveawayEntry(prevState: any, formData: FormData) {
       return { success: false, message: "Failed to submit entry. Please try again." };
     }
 
-    return { success: true, message: "You're Entered!" };
+    const durationLower = brand_duration.toLowerCase();
+    let isUnderTwoYears = false;
+    
+    if (/(month|start|new|just|under|less|couple)/.test(durationLower)) {
+      isUnderTwoYears = true;
+    }
+    
+    const match = durationLower.match(/\d+(\.\d+)?/);
+    if (match) {
+      const num = parseFloat(match[0]);
+      if (durationLower.includes("year") || durationLower.includes("yr")) {
+        isUnderTwoYears = num <= 2;
+      }
+    }
+
+    return { success: true, message: "You're Entered!", isUnderTwoYears };
   } catch (err) {
     console.error("Unexpected error:", err);
     return { success: false, message: "An unexpected error occurred." };
