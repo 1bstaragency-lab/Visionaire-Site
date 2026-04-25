@@ -7,15 +7,15 @@ import Floating, {
   FloatingElement,
 } from "@/components/ui/parallax-floating"
 
-const exampleImages = [
-  { url: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1534531173927-aeb928d54385?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1579294273574-e36bf265c0ec?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1594908900066-3f47337549d8?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1527011045974-4b5c7774dce5?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1518134346374-184f9d21cb2c?q=80&w=800&auto=format&fit=crop" },
-  { url: "https://images.unsplash.com/photo-1585863955675-9e658421c97a?q=80&w=800&auto=format&fit=crop" },
+const btsVideos = [
+  { url: "/videos/bts/bts-1.mov" },
+  { url: "/videos/bts/bts-2.mov" },
+  { url: "/videos/bts/bts-3.mov" },
+  { url: "/videos/bts/bts-4.mov" },
+  { url: "/videos/bts/bts-5.mov" },
+  { url: "/videos/bts/bts-6.mov" },
+  { url: "/videos/bts/bts-7.mov" },
+  { url: "/videos/bts/bts-8.mov" },
 ]
 
 export const BTSCarousel = () => {
@@ -40,66 +40,74 @@ export const BTSCarousel = () => {
           What our sets look like
         </p>
         <div className="z-50 hover:scale-105 transition-transform bg-white text-black font-semibold uppercase tracking-widest rounded-sm px-6 py-3 cursor-pointer text-xs md:text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-          bringing visions alive
+          bringing visions to life
         </div>
       </motion.div>
 
       <Floating sensitivity={-1} className="overflow-hidden">
         <FloatingElement depth={0.5} className="top-[10%] left-[5%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[0].url}
+            src={btsVideos[0].url}
+            autoPlay loop muted playsInline
             className="w-24 h-24 md:w-32 md:h-32 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
         <FloatingElement depth={1} className="top-[15%] left-[28%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[1].url}
+            src={btsVideos[1].url}
+            autoPlay loop muted playsInline
             className="w-28 h-28 md:w-40 md:h-40 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
         <FloatingElement depth={2} className="top-[5%] left-[60%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[2].url}
+            src={btsVideos[2].url}
+            autoPlay loop muted playsInline
             className="w-32 h-44 md:w-48 md:h-64 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
         <FloatingElement depth={1} className="top-[10%] left-[85%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[3].url}
+            src={btsVideos[3].url}
+            autoPlay loop muted playsInline
             className="w-24 h-24 md:w-36 md:h-36 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
 
         <FloatingElement depth={1.5} className="top-[55%] left-[8%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[4].url}
+            src={btsVideos[4].url}
+            autoPlay loop muted playsInline
             className="w-32 h-32 md:w-48 md:h-48 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
         <FloatingElement depth={2} className="top-[65%] left-[75%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[7].url}
+            src={btsVideos[5].url}
+            autoPlay loop muted playsInline
             className="w-36 h-36 md:w-52 md:h-64 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
 
         <FloatingElement depth={3.5} className="top-[65%] left-[20%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[5].url}
+            src={btsVideos[6].url}
+            autoPlay loop muted playsInline
             className="w-40 h-40 md:w-56 md:h-56 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
         <FloatingElement depth={1} className="top-[75%] left-[55%]">
-          <motion.img
+          <motion.video
             initial={{ opacity: 0 }}
-            src={exampleImages[6].url}
+            src={btsVideos[7].url}
+            autoPlay loop muted playsInline
             className="w-28 h-28 md:w-40 md:h-40 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md opacity-80 hover:opacity-100 filter grayscale hover:grayscale-0"
           />
         </FloatingElement>
