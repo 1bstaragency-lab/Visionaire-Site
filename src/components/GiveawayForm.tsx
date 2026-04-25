@@ -36,12 +36,12 @@ export default function GiveawayForm() {
 
       <div className="flex flex-col gap-2 mb-6 bg-zinc-950 border border-white/5 p-3 rounded-lg shadow-inner">
         <div className="bg-gradient-to-b from-[#FFD700]/10 to-transparent border border-[#FFD700]/20 p-2 rounded-md text-center flex flex-col items-center justify-center">
-          <p className="text-[#FFD700] text-xs font-bold uppercase tracking-widest mb-0.5">1st Place — Gold <span className="opacity-80">($3,500 Value)</span></p>
+          <p className="text-[#FFD700] text-xs font-bold uppercase tracking-widest mb-0.5">1st Place — Gold <span className="opacity-80">($5,000 Value)</span></p>
           <p className="text-white text-xs">Editorial narrative or fashion commercial with full production crew & services.</p>
         </div>
         <div className="bg-gradient-to-b from-[#C0C0C0]/10 to-transparent border border-[#C0C0C0]/20 p-2 rounded-md text-center flex flex-col items-center justify-center">
-          <p className="text-[#C0C0C0] text-xs font-bold uppercase tracking-widest mb-0.5">2nd Place — Silver <span className="opacity-80">($750 Value)</span></p>
-          <p className="text-white text-xs">2 High-End Instagram Reels.</p>
+          <p className="text-[#C0C0C0] text-xs font-bold uppercase tracking-widest mb-0.5">2nd Place — Silver <span className="opacity-80">($1,200 Value)</span></p>
+          <p className="text-white text-xs">3 High-End Instagram Reels.</p>
         </div>
         <div className="bg-gradient-to-b from-[#CD7F32]/10 to-transparent border border-[#CD7F32]/20 p-2 rounded-md text-center flex flex-col items-center justify-center">
           <p className="text-[#CD7F32] text-xs font-bold uppercase tracking-widest mb-0.5">3rd Place — Bronze</p>
