@@ -42,8 +42,8 @@ export default function Portfolio() {
           src="/logo.png" 
           alt="Visionaire Logo" 
           className="h-16 md:h-24 object-contain invert"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          animate={{ rotateY: 360 }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
       </motion.header>
 

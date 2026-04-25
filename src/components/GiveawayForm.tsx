@@ -15,7 +15,11 @@ export default function GiveawayForm() {
     return (
       <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-8 text-center my-8 shadow-2xl">
         <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">You're Entered!</h2>
-        <p className="text-zinc-400">Good luck! We'll reach out if you win the free commercial.</p>
+        <p className="text-zinc-400">
+          Good luck! We'll reach out if you win the free commercial.
+          <br /><br />
+          <span className="text-zinc-500 italic text-sm">psst... even if you don't win, we will still show love at a future shoot if you book with us!</span>
+        </p>
       </div>
     );
   }
