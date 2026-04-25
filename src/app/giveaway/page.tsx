@@ -9,23 +9,23 @@ export default function GiveawayPage() {
       
       <div className="w-full max-w-4xl mt-8">
         <div className="flex flex-col items-center justify-center mb-12 gap-4">
-          <div className="flex items-center justify-center gap-4 md:gap-8">
+          <div className="flex items-center justify-center gap-6 md:gap-12">
             <Link href="/">
               <img 
                 src="/logo.png" 
                 alt="Visionaire Logo" 
-                className="h-10 md:h-14 object-contain invert hover:opacity-80 transition-opacity"
+                className="h-20 md:h-28 object-contain invert hover:opacity-80 transition-opacity"
               />
             </Link>
             
-            <span className="text-zinc-600 text-xl font-light">X</span>
+            <span className="text-zinc-600 text-2xl md:text-3xl font-light">X</span>
             
             {/* Atlanta Streetwear Market Logo */}
             <div className="flex items-center">
               <img 
                 src="/logos/aswm.png" 
                 alt="Atlanta Streetwear Market Logo" 
-                className="h-10 md:h-14 object-contain transition-transform hover:scale-105"
+                className="h-20 md:h-28 object-contain transition-transform hover:scale-105"
               />
             </div>
           </div>

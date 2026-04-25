@@ -39,7 +39,7 @@ export default function Portfolio() {
         <motion.img 
           src="/logo.png" 
           alt="Visionaire Logo" 
-          className="h-16 md:h-24 object-contain invert"
+          className="h-10 md:h-20 object-contain invert"
           animate={{ rotateY: 360 }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />

@@ -62,59 +62,59 @@ export default function GiveawayForm() {
         </div>
       )}
 
-      <form action={formAction} className="flex flex-col gap-5">
+      <form action={formAction} className="flex flex-col gap-6 mt-4">
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="name" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">What's your name?</label>
+          <label htmlFor="name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">What's your name?</label>
           <input 
             type="text" 
             id="name" 
             name="name" 
             required 
             placeholder="John Doe"
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="phone" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">What's your number?</label>
+          <label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">What's your number?</label>
           <input 
             type="tel" 
             id="phone" 
             name="phone" 
             required 
             placeholder="(555) 123-4567"
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="duration" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">How long have you had your brand?</label>
+          <label htmlFor="duration" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">How long have you had your brand?</label>
           <input 
             type="text" 
             id="duration" 
             name="brand_duration" 
             required 
             placeholder="e.g. 2 years, Just starting, etc."
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="visuals" className="text-xs uppercase tracking-widest text-zinc-400 font-medium">Are visuals important to your brand's identity?</label>
+          <label htmlFor="visuals" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">Are visuals important to your brand's identity?</label>
           <input 
             type="text" 
             id="visuals" 
             name="visuals_importance" 
             required 
             placeholder="e.g. Yes, absolutely!"
-            className="bg-black border border-white/10 rounded-md px-4 py-3 text-white text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/50 transition-all"
+            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <button 
           type="submit" 
           disabled={isPending}
-          className="mt-4 w-full bg-white text-black font-semibold uppercase tracking-widest py-4 rounded-md hover:bg-zinc-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-center"
+          className="mt-6 w-full bg-white text-black font-semibold uppercase tracking-widest py-3.5 text-sm rounded-md hover:bg-zinc-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-center shadow-[0_0_20px_rgba(255,255,255,0.1)]"
         >
           {isPending ? "Entering..." : "Enter Giveaway"}
         </button>
