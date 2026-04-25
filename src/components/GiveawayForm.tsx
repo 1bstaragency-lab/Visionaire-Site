@@ -21,7 +21,7 @@ export default function GiveawayForm() {
             <p className="text-white font-bold tracking-widest uppercase text-sm mb-2">Want an extra entry?</p>
             <p className="text-zinc-300 text-sm mb-4">Since your brand is less than 2 years old, we want to give you an extra chance to win!</p>
             <a 
-              href="https://instagram.com/visionaire.productions" 
+              href="https://instagram.com/Visionsaire" 
               target="_blank" 
               rel="noreferrer" 
               className="inline-block bg-white text-black font-semibold uppercase tracking-widest py-2 px-6 text-xs rounded-md hover:bg-zinc-200 transition-colors duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]"
