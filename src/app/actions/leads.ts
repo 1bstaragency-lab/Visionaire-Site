@@ -7,6 +7,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 export async function submitLeadEntry(prevState: any, formData: FormData) {
   const category = formData.get("category") as string;
+  const subject = formData.get("subject") as string;
   const name = formData.get("name") as string;
   const contact_info = formData.get("contact_info") as string;
   const question_1 = formData.get("question_1") as string;
@@ -35,7 +36,7 @@ export async function submitLeadEntry(prevState: any, formData: FormData) {
     const { error } = await supabase
       .from("leadcaptures2")
       .insert([
-        { category, name, contact_info, responses }
+        { category, subject, name, contact_info, responses }
       ]);
 
     if (error) {

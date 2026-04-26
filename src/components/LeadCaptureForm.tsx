@@ -76,6 +76,7 @@ export default function LeadCaptureForm({ category }: { category: CategoryType }
 
       <form action={formAction} className="flex flex-col gap-6">
         <input type="hidden" name="category" value={category} />
+        <input type="hidden" name="subject" value={`${config.title} Form`} />
         
         <div className="flex flex-col gap-2 text-center">
           <label htmlFor="name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your name?</label>
