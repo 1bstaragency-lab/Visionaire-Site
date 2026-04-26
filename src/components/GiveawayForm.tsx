@@ -83,50 +83,50 @@ export default function GiveawayForm() {
 
       <form action={formAction} className="flex flex-col gap-6 mt-4">
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">What's your name?</label>
+          <label htmlFor="name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your name?</label>
           <input 
             type="text" 
             id="name" 
             name="name" 
             required 
             placeholder="John Doe"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">What's your number?</label>
+          <label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your number?</label>
           <input 
             type="tel" 
             id="phone" 
             name="phone" 
             required 
             placeholder="(555) 123-4567"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="duration" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">How long have you had your brand?</label>
+          <label htmlFor="duration" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">How long have you had your brand?</label>
           <input 
             type="text" 
             id="duration" 
             name="brand_duration" 
             required 
             placeholder="e.g. 2 years, Just starting, etc."
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="visuals" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">Are visuals important to your brand's identity?</label>
+          <label htmlFor="visuals" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">Are visuals important to your brand's identity?</label>
           <input 
             type="text" 
             id="visuals" 
             name="visuals_importance" 
             required 
             placeholder="e.g. Yes, absolutely!"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 

@@ -42,62 +42,62 @@ export default function LeadCaptureForm() {
 
       <form action={formAction} className="flex flex-col gap-6">
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="artist_name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">What's your artist name?</label>
+          <label htmlFor="artist_name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your artist name?</label>
           <input 
             type="text" 
             id="artist_name" 
             name="artist_name" 
             required 
             placeholder="Your Stage Name"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="contact_info" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">Email or Phone Number?</label>
+          <label htmlFor="contact_info" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">Email or Phone Number?</label>
           <input 
             type="text" 
             id="contact_info" 
             name="contact_info" 
             required 
             placeholder="How can we reach you?"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="music_type" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">What type of music do you make?</label>
+          <label htmlFor="music_type" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What type of music do you make?</label>
           <input 
             type="text" 
             id="music_type" 
             name="music_type" 
             required 
             placeholder="Genre / Style"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="last_video" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">When's the last time you shot a music video?</label>
+          <label htmlFor="last_video" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">When's the last time you shot a music video?</label>
           <input 
             type="text" 
             id="last_video" 
             name="last_video" 
             required 
             placeholder="e.g. 6 months ago, Never"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="music_duration" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-medium">How long have you been doing music?</label>
+          <label htmlFor="music_duration" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">How long have you been doing music?</label>
           <input 
             type="text" 
             id="music_duration" 
             name="music_duration" 
             required 
             placeholder="e.g. 3 years, Just started"
-            className="bg-black/50 border border-white/5 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-700 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
+            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
