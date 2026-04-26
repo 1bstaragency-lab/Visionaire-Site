@@ -6,13 +6,14 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 export async function submitLeadEntry(prevState: any, formData: FormData) {
-  const artist_name = formData.get("artist_name") as string;
+  const category = formData.get("category") as string;
+  const name = formData.get("name") as string;
   const contact_info = formData.get("contact_info") as string;
-  const music_type = formData.get("music_type") as string;
-  const last_video = formData.get("last_video") as string;
-  const music_duration = formData.get("music_duration") as string;
+  const question_1 = formData.get("question_1") as string;
+  const question_2 = formData.get("question_2") as string;
+  const question_3 = formData.get("question_3") as string;
 
-  if (!artist_name || !contact_info || !music_type || !last_video || !music_duration) {
+  if (!name || !contact_info || !question_1 || !question_2 || !question_3) {
     return { success: false, message: "All fields are required." };
   }
 
@@ -23,11 +24,18 @@ export async function submitLeadEntry(prevState: any, formData: FormData) {
 
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+  // Group the category-specific questions into a JSON object
+  const responses = {
+    q1: question_1,
+    q2: question_2,
+    q3: question_3
+  };
+
   try {
     const { error } = await supabase
       .from("lead_captures")
       .insert([
-        { artist_name, contact_info, music_type, last_video, music_duration }
+        { category, name, contact_info, responses }
       ]);
 
     if (error) {

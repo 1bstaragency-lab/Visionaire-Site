@@ -8,8 +8,42 @@ const initialState = {
   message: "",
 };
 
-export default function LeadCaptureForm() {
+type CategoryType = "brand" | "artist" | "narrative" | "personal";
+
+const categoryConfig: Record<CategoryType, { title: string, subtitle: string, q1: any, q2: any, q3: any }> = {
+  artist: {
+    title: "Music Artist",
+    subtitle: "Ready to elevate your visuals? Tell us a bit about yourself.",
+    q1: { label: "What type of music do you make?", placeholder: "Genre / Style" },
+    q2: { label: "When's the last time you shot a music video?", placeholder: "e.g. 6 months ago, Never" },
+    q3: { label: "How long have you been doing music?", placeholder: "e.g. 3 years, Just started" }
+  },
+  brand: {
+    title: "Brand Campaign",
+    subtitle: "Let's create powerful visuals for your brand.",
+    q1: { label: "What is your brand name?", placeholder: "Your Brand" },
+    q2: { label: "What is the main goal of this project?", placeholder: "e.g. Product launch, Brand awareness" },
+    q3: { label: "What is your estimated budget?", placeholder: "e.g. $1k - $3k" }
+  },
+  narrative: {
+    title: "Narrative & Film",
+    subtitle: "Tell us about your story and vision.",
+    q1: { label: "What is the working title?", placeholder: "Project Title" },
+    q2: { label: "What is the genre?", placeholder: "e.g. Drama, Thriller, Documentary" },
+    q3: { label: "Do you have a finished script?", placeholder: "Yes / No / In Progress" }
+  },
+  personal: {
+    title: "Personal Project",
+    subtitle: "Let's capture your special moments.",
+    q1: { label: "What type of project is this?", placeholder: "e.g. Wedding, Birthday, Milestone" },
+    q2: { label: "When is the occasion?", placeholder: "Date or Timeline" },
+    q3: { label: "Where will it be located?", placeholder: "City or Venue" }
+  }
+};
+
+export default function LeadCaptureForm({ category }: { category: CategoryType }) {
   const [state, formAction, isPending] = useActionState(submitLeadEntry, initialState);
+  const config = categoryConfig[category];
 
   if (state?.success) {
     return (
@@ -18,7 +52,7 @@ export default function LeadCaptureForm() {
         <p className="text-zinc-400 mt-4">
           Thanks for reaching out! We've received your details and will be in touch soon.
           <br /><br />
-          <span className="text-zinc-500 italic text-sm">Stay creative. We look forward to creating visuals with you.</span>
+          <span className="text-zinc-500 italic text-sm">Stay creative. We look forward to working with you.</span>
         </p>
       </div>
     );
@@ -30,8 +64,8 @@ export default function LeadCaptureForm() {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zinc-600 via-white to-zinc-600 opacity-50" />
       
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">Connect With Us</h2>
-        <p className="text-zinc-400 text-sm">Ready to elevate your visuals? Tell us a bit about yourself.</p>
+        <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">{config.title}</h2>
+        <p className="text-zinc-400 text-sm">{config.subtitle}</p>
       </div>
 
       {state?.message && !state?.success && (
@@ -41,14 +75,16 @@ export default function LeadCaptureForm() {
       )}
 
       <form action={formAction} className="flex flex-col gap-6">
+        <input type="hidden" name="category" value={category} />
+        
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="artist_name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your artist name?</label>
+          <label htmlFor="name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your name?</label>
           <input 
             type="text" 
-            id="artist_name" 
-            name="artist_name" 
+            id="name" 
+            name="name" 
             required 
-            placeholder="Your Stage Name"
+            placeholder="Your Name"
             className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
@@ -66,37 +102,37 @@ export default function LeadCaptureForm() {
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="music_type" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What type of music do you make?</label>
+          <label htmlFor="question_1" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">{config.q1.label}</label>
           <input 
             type="text" 
-            id="music_type" 
-            name="music_type" 
+            id="question_1" 
+            name="question_1" 
             required 
-            placeholder="Genre / Style"
+            placeholder={config.q1.placeholder}
             className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="last_video" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">When's the last time you shot a music video?</label>
+          <label htmlFor="question_2" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">{config.q2.label}</label>
           <input 
             type="text" 
-            id="last_video" 
-            name="last_video" 
+            id="question_2" 
+            name="question_2" 
             required 
-            placeholder="e.g. 6 months ago, Never"
+            placeholder={config.q2.placeholder}
             className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="music_duration" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">How long have you been doing music?</label>
+          <label htmlFor="question_3" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">{config.q3.label}</label>
           <input 
             type="text" 
-            id="music_duration" 
-            name="music_duration" 
+            id="question_3" 
+            name="question_3" 
             required 
-            placeholder="e.g. 3 years, Just started"
+            placeholder={config.q3.placeholder}
             className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
           />
         </div>
