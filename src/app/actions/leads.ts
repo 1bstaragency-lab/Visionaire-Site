@@ -33,7 +33,7 @@ export async function submitLeadEntry(prevState: any, formData: FormData) {
 
   try {
     const { error } = await supabase
-      .from("lead_captures")
+      .from("leadcaptures2")
       .insert([
         { category, name, contact_info, responses }
       ]);
