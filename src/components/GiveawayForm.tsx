@@ -3,7 +3,13 @@
 import React, { useActionState } from "react";
 import { submitGiveawayEntry } from "@/app/actions/giveaway";
 
-const initialState = {
+type GiveawayState = {
+  success: boolean;
+  message: string;
+  isUnderTwoYears?: boolean;
+};
+
+const initialState: GiveawayState = {
   success: false,
   message: "",
 };
