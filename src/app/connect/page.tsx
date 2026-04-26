@@ -47,24 +47,24 @@ export default function CategorySelectionPage() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[100px]" />
       </div>
 
-      <div className="w-full max-w-4xl mt-8 z-10">
-        <div className="flex flex-col items-center justify-center mb-12 gap-4">
+      <div className="w-full max-w-4xl mt-4 md:mt-8 z-10">
+        <div className="flex flex-col items-center justify-center mb-8 md:mb-12 gap-2 md:gap-4">
           <Link href="/">
             <img 
               src="/logo.png" 
               alt="Visionaire Logo" 
-              className="h-20 md:h-28 object-contain invert hover:opacity-80 transition-opacity"
+              className="h-16 md:h-28 object-contain invert hover:opacity-80 transition-opacity"
             />
           </Link>
-          <p className="text-zinc-500 text-xs tracking-widest uppercase">* Select Your Project Type *</p>
+          <p className="text-zinc-500 text-[10px] md:text-xs tracking-widest uppercase">* Select Your Project Type *</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-3xl mx-auto">
           {categories.map((category) => (
             <Link 
               key={category.id} 
               href={`/connect/${category.id}`}
-              className={`group relative overflow-hidden bg-zinc-900/50 border border-white/10 rounded-xl p-8 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:-translate-y-1`}
+              className={`group relative overflow-hidden bg-zinc-900/50 border border-white/10 rounded-xl p-6 md:p-8 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:-translate-y-1`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               

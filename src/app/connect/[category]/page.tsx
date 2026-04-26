@@ -27,16 +27,16 @@ export default async function CategoryFormPage({ params }: { params: Promise<{ c
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[100px]" />
       </div>
 
-      <div className="w-full max-w-4xl mt-8 z-10">
-        <div className="flex flex-col items-center justify-center mb-8 gap-4">
+      <div className="w-full max-w-4xl mt-4 md:mt-8 z-10">
+        <div className="flex flex-col items-center justify-center mb-6 md:mb-8 gap-2 md:gap-4">
           <Link href="/">
             <img 
               src="/logo.png" 
               alt="Visionaire Logo" 
-              className="h-20 md:h-28 object-contain invert hover:opacity-80 transition-opacity"
+              className="h-16 md:h-28 object-contain invert hover:opacity-80 transition-opacity"
             />
           </Link>
-          <p className="text-zinc-500 text-xs tracking-widest uppercase">* Application Form *</p>
+          <p className="text-zinc-500 text-[10px] md:text-xs tracking-widest uppercase">* Application Form *</p>
         </div>
 
         <LeadCaptureForm category={category as "brand" | "artist" | "narrative" | "personal"} />

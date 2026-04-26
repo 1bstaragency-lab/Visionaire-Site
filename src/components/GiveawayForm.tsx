@@ -19,8 +19,8 @@ export default function GiveawayForm() {
 
   if (state?.success) {
     return (
-      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-16 px-8 text-center my-8 shadow-2xl">
-        <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">You're Entered!</h2>
+      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-12 px-6 md:py-16 md:px-8 text-center my-4 md:my-8 shadow-2xl">
+        <h2 className="text-xl md:text-2xl font-light text-white mb-2 tracking-widest uppercase">You're Entered!</h2>
         
         {state.isUnderTwoYears && (
           <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 p-5 rounded-lg my-6 shadow-inner">
@@ -47,7 +47,7 @@ export default function GiveawayForm() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-6 md:p-8 my-8 shadow-2xl relative overflow-hidden group">
+    <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-5 md:p-8 my-2 md:my-8 shadow-2xl relative overflow-hidden group">
       {/* Subtle chrome gradient accent at the top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zinc-600 via-white to-zinc-600 opacity-50" />
       

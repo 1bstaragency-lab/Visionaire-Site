@@ -47,8 +47,8 @@ export default function LeadCaptureForm({ category }: { category: CategoryType }
 
   if (state?.success) {
     return (
-      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-16 px-8 text-center my-8 shadow-2xl">
-        <h2 className="text-2xl font-light text-white mb-4 tracking-widest uppercase">Information Received</h2>
+      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-12 px-6 md:py-16 md:px-8 text-center my-4 md:my-8 shadow-2xl">
+        <h2 className="text-xl md:text-2xl font-light text-white mb-4 tracking-widest uppercase">Information Received</h2>
         <p className="text-zinc-400 mt-4">
           Thanks for reaching out! We've received your details and will be in touch soon.
           <br /><br />
@@ -59,7 +59,7 @@ export default function LeadCaptureForm({ category }: { category: CategoryType }
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-6 md:p-8 my-8 shadow-2xl relative overflow-hidden group">
+    <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-5 md:p-8 my-2 md:my-8 shadow-2xl relative overflow-hidden group">
       {/* Subtle chrome gradient accent at the top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zinc-600 via-white to-zinc-600 opacity-50" />
       
