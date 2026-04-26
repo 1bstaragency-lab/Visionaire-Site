@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import NativeVideo from "@/components/NativeVideo";
 import { BrandLogo } from "@/components/ui/BrandLogo";
@@ -34,15 +35,30 @@ export default function Portfolio() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full flex justify-center pt-12 pb-6 md:pt-16 md:pb-8"
+        className="w-full flex items-center justify-between px-6 pt-8 pb-6 md:px-12 md:pt-12 md:pb-8 relative z-50"
       >
-        <motion.img 
-          src="/logo.png" 
-          alt="Visionaire Logo" 
-          className="h-10 md:h-20 object-contain invert"
-          animate={{ rotateY: 360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        />
+        <div className="w-1/3"></div> {/* Spacer to keep logo centered */}
+        
+        <div className="w-1/3 flex justify-center">
+          <motion.img 
+            src="/logo.png" 
+            alt="Visionaire Logo" 
+            className="h-10 md:h-20 object-contain invert"
+            animate={{ rotateY: 360 }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          />
+        </div>
+
+        <div className="w-1/3 flex justify-end">
+          <Link 
+            href="/connect" 
+            className="group relative px-6 py-2.5 overflow-hidden rounded-full bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+          >
+            <span className="relative z-10 text-xs md:text-sm font-semibold uppercase tracking-widest text-zinc-300 group-hover:text-white transition-colors duration-300">
+              Work With Us
+            </span>
+          </Link>
+        </div>
       </motion.header>
 
       {/* Video Grid */}
