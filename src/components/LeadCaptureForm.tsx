@@ -49,11 +49,23 @@ export default function LeadCaptureForm({ category }: { category: CategoryType }
     return (
       <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-12 px-6 md:py-16 md:px-8 text-center my-4 md:my-8 shadow-2xl">
         <h2 className="text-xl md:text-2xl font-light text-white mb-4 tracking-widest uppercase">Information Received</h2>
-        <p className="text-zinc-400 mt-4">
+        <p className="text-zinc-400 mt-4 mb-8">
           Thanks for reaching out! We've received your details and will be in touch soon.
           <br /><br />
           <span className="text-zinc-500 italic text-sm">Stay creative. We look forward to working with you.</span>
         </p>
+
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-white text-xs uppercase tracking-[0.2em] font-medium">Want to speed things up?</p>
+          <a 
+            href="https://calendly.com/visionaireproduction/30min" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-black font-bold uppercase tracking-[0.2em] py-4 px-10 text-[10px] md:text-xs rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5"
+          >
+            Schedule a 30-min Call
+          </a>
+        </div>
       </div>
     );
   }
