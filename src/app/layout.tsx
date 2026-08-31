@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Bebas_Neue } from "next/font/google";
+import { Inter, Playfair_Display, Bebas_Neue, Martian_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
+});
+
+const martianMono = Martian_Mono({
+  variable: "--font-martian",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 const playfair = Playfair_Display({
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${bebas.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${bebas.variable} ${martianMono.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground">{children}</body>
     </html>
