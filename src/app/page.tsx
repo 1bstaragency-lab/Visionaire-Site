@@ -13,36 +13,11 @@ import {
   animate,
 } from "framer-motion";
 import NativeVideo from "@/components/NativeVideo";
+import { works, type Work } from "@/lib/works";
 
 /* ————————————————————————————————————————————————
    DATA
 ———————————————————————————————————————————————— */
-
-type Work = {
-  title: string;
-  src: string;
-  category: "COMMERCIAL" | "MUSIC VIDEO";
-  client: string;
-};
-
-const works: Work[] = [
-  { title: "CONVERSE", src: "/videos/converse.mp4", category: "COMMERCIAL", client: "CONVERSE" },
-  { title: "CDG × CONVERSE", src: "/videos/youtube/3adRUaYNmJ4.mp4", category: "COMMERCIAL", client: "COMME DES GARÇONS" },
-  { title: "SKIMS", src: "/videos/youtube/L-iVcooZdt8.mp4", category: "COMMERCIAL", client: "SKIMS" },
-  { title: "ASICS", src: "/videos/asics.mp4", category: "COMMERCIAL", client: "ASICS" },
-  { title: "ADIDAS", src: "/videos/youtube/QyLYTi9qkSg.mp4", category: "COMMERCIAL", client: "ADIDAS" },
-  { title: "TIMBERLAND", src: "/videos/youtube/V7eHmKc31Bg.mp4", category: "COMMERCIAL", client: "TIMBERLAND" },
-  { title: "AGENT PROVOCATEUR", src: "/videos/youtube/3T3Dhc5fXxc.mp4", category: "COMMERCIAL", client: "AGENT PROVOCATEUR" },
-  { title: "LEVI'S", src: "/videos/youtube/q9EzrDZkvLk.mp4", category: "COMMERCIAL", client: "LEVI'S" },
-  { title: "ESCAPE THE FATE", src: "/videos/youtube/f-XYpu7gYuw.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX" },
-  { title: "PARTNERS IN CRYME", src: "/videos/youtube/aUiCkuA4GyY.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX" },
-  { title: "ETERNAL", src: "/videos/youtube/RAZwSj2puyQ.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX" },
-  { title: "SHOT IN THE DARK", src: "/videos/youtube/CvAo-ixDS3c.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX" },
-  { title: "APPLE PAY", src: "/videos/youtube/eWJCHiBNJqE.mp4", category: "MUSIC VIDEO", client: "XRARESTBOY" },
-  { title: "TRUST", src: "/videos/youtube/mpk0K9XMtOM.mp4", category: "MUSIC VIDEO", client: "LAYLOW!" },
-  { title: "WHEREVER U ARE", src: "/videos/youtube/3mrZBy57Fk0.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX & JAY VERSACE" },
-  { title: "FADE", src: "/videos/youtube/ckxOuNMgCq0.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX" },
-];
 
 const services = [
   { n: "01", name: "MUSIC VIDEOS", sub: "CONCEPT TO FINAL CUT" },
@@ -735,6 +710,70 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* SHOWCASE */}
+      <section className="px-5 md:px-10 pb-28">
+        <Reveal>
+          <SectionHeader label="Showcase" count="360°" />
+        </Reveal>
+        <Reveal delay={0.1}>
+          <Link
+            href="/showcase"
+            className="group relative block mt-10 h-[60svh] min-h-[420px] bg-black overflow-hidden"
+          >
+            {/* Rotating 360° room preview — camera inside a spinning cylinder of work */}
+            <div className="absolute inset-0" style={{ perspective: "700px" }}>
+              <motion.div
+                className="absolute left-1/2 top-1/2"
+                style={{ z: 700, transformStyle: "preserve-3d" }}
+                animate={{ rotateY: -360 }}
+                transition={{ repeat: Infinity, duration: 48, ease: "linear" }}
+              >
+                {[works[0], works[8], works[3], works[10], works[4], works[13], works[5], works[11]].map(
+                  (w, i) => (
+                    <div
+                      key={w.src}
+                      className="absolute w-[340px] h-[191px] -ml-[170px] -mt-[96px] bg-zinc-900 overflow-hidden opacity-85"
+                      style={{ transform: `rotateY(${i * 45}deg) translateZ(-480px)` }}
+                    >
+                      <NativeVideo src={w.src} />
+                    </div>
+                  )
+                )}
+              </motion.div>
+            </div>
+
+            {/* Fashion work grid — steady center panel for easier viewing while the room spins */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[64%] md:w-[46%] grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2">
+              {works.slice(0, 8).map((w) => (
+                <div key={w.src} className="aspect-video bg-zinc-900 overflow-hidden shadow-2xl">
+                  <NativeVideo src={w.src} />
+                </div>
+              ))}
+            </div>
+
+            {/* vignette so the type reads */}
+            <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors duration-500" />
+
+            {/* split display type */}
+            <div className="absolute inset-0 flex items-center justify-between px-[6%] pointer-events-none">
+              <span className="font-sans font-medium uppercase tracking-[-0.03em] text-white text-5xl md:text-8xl">
+                Show
+              </span>
+              <span className="font-sans font-medium uppercase tracking-[-0.03em] text-white text-5xl md:text-8xl">
+                Case
+              </span>
+            </div>
+
+            {/* CTA */}
+            <div className="absolute inset-x-0 bottom-6 md:bottom-10 flex justify-center">
+              <span className="inline-flex items-center gap-8 border border-white/40 bg-black/40 backdrop-blur-sm px-6 py-4 font-mono text-[11px] tracking-widest uppercase text-white group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                Click to View <span>→</span>
+              </span>
+            </div>
+          </Link>
+        </Reveal>
       </section>
 
       {/* FAQ */}
