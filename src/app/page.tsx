@@ -231,9 +231,33 @@ function HeroFan() {
       onPointerUp={() => (lastPointer.current = null)}
       onPointerCancel={() => (lastPointer.current = null)}
     >
-      <div style={{ perspective: "1400px", transform: `scale(${scale})` }}>
+      <div className="relative" style={{ perspective: "1400px", transform: `scale(${scale})` }}>
         <motion.div style={{ rotateX: springRX, rotateY: springRY, transformStyle: "preserve-3d" }}>
         <div style={{ transform: "rotateX(-14deg)", transformStyle: "preserve-3d" }}>
+          {/* Signature mark at the hub — a 3D asset inside the scene: the glyph is
+              extruded from stacked Z-layers so it has real thickness, spins like a
+              coin, and tilts with the wheel when dragged. */}
+          <motion.div
+            aria-hidden
+            className="absolute left-0 top-0 pointer-events-none select-none"
+            style={{ x: "-50%", y: "calc(-50% - 130px)", transformStyle: "preserve-3d" }}
+            animate={{ rotateY: 360 }}
+            transition={{ repeat: Infinity, duration: 14, ease: "linear" }}
+          >
+            {Array.from({ length: 25 }).map((_, i) => (
+              <span
+                key={i}
+                className="block text-5xl md:text-6xl leading-none"
+                style={{
+                  position: i === 0 ? "relative" : "absolute",
+                  inset: 0,
+                  transform: `translateZ(${(i - 12) * 0.7}px)`,
+                }}
+              >
+                👁️‍🗨️
+              </span>
+            ))}
+          </motion.div>
           <motion.div
             className="relative"
             style={{ transformStyle: "preserve-3d" }}
