@@ -274,6 +274,66 @@ function HeroFan() {
   );
 }
 
+/* Site soundtrack: tries to autoplay; if the browser blocks it, starts on the
+   visitor's first interaction. Hides itself entirely if no track file exists. */
+function Soundtrack() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [available, setAvailable] = useState(true);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = 0.35;
+
+    const tryPlay = () => audio.play().then(() => setPlaying(true)).catch(() => {});
+    tryPlay();
+
+    // Autoplay blocked → arm one-time first-interaction starters.
+    const start = () => {
+      if (audio.paused && !audio.dataset.userPaused) tryPlay();
+      cleanup();
+    };
+    const cleanup = () => {
+      window.removeEventListener("pointerdown", start);
+      window.removeEventListener("keydown", start);
+      window.removeEventListener("scroll", start);
+    };
+    window.addEventListener("pointerdown", start);
+    window.addEventListener("keydown", start);
+    window.addEventListener("scroll", start, { passive: true });
+    return cleanup;
+  }, []);
+
+  if (!available) return null;
+
+  return (
+    <>
+      <audio ref={audioRef} src="/audio/theme.mp3" loop preload="auto" onError={() => setAvailable(false)} />
+      <button
+        onClick={() => {
+          const audio = audioRef.current;
+          if (!audio) return;
+          if (audio.paused) {
+            delete audio.dataset.userPaused;
+            audio.play().then(() => setPlaying(true)).catch(() => {});
+          } else {
+            audio.dataset.userPaused = "1";
+            audio.pause();
+            setPlaying(false);
+          }
+        }}
+        className="fixed bottom-5 right-5 md:bottom-8 md:right-10 z-50 mix-blend-difference text-white cursor-pointer"
+        aria-label={playing ? "Turn sound off" : "Turn sound on"}
+      >
+        <Bracketed className="hover:opacity-60 transition-opacity">
+          Sound {playing ? "On" : "Off"}
+        </Bracketed>
+      </button>
+    </>
+  );
+}
+
 function MiamiClock() {
   const [time, setTime] = useState("");
   useEffect(() => {
@@ -451,6 +511,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white overflow-x-hidden">
       <Loader done={loaded} />
+      <Soundtrack />
 
       {/* HEADER */}
       <header className="fixed top-0 inset-x-0 z-50 mix-blend-difference text-white">
@@ -462,7 +523,7 @@ export default function Home() {
                 Home
               </a>
               <a href="#work" className="hover:opacity-60 transition-opacity">
-                Works [{works.length}]
+                Works
               </a>
             </div>
             <div className="flex flex-col">

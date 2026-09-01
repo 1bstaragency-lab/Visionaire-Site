@@ -41,29 +41,65 @@ const categoryConfig: Record<CategoryType, { title: string, subtitle: string, q1
   }
 };
 
+const inputClasses =
+  "w-full bg-transparent border-0 border-b border-black/30 px-0 py-3 text-black text-base placeholder:text-black/25 focus:outline-none focus:border-black transition-colors rounded-none";
+
+function Field({
+  id,
+  name,
+  label,
+  placeholder,
+  index,
+}: {
+  id: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  index: string;
+}) {
+  return (
+    <div className="flex flex-col gap-1">
+      <label htmlFor={id} className="font-mono text-[10px] uppercase tracking-widest text-black/50">
+        <span className="text-black/30">[{index}]</span>&nbsp;&nbsp;{label}
+      </label>
+      <input type="text" id={id} name={name} required placeholder={placeholder} className={inputClasses} />
+    </div>
+  );
+}
+
 export default function LeadCaptureForm({ category }: { category: CategoryType }) {
   const [state, formAction, isPending] = useActionState(submitLeadEntry, initialState);
   const config = categoryConfig[category];
 
   if (state?.success) {
     return (
-      <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg py-12 px-6 md:py-16 md:px-8 text-center my-4 md:my-8 shadow-2xl">
-        <h2 className="text-xl md:text-2xl font-light text-white mb-4 tracking-widest uppercase">Information Received</h2>
-        <p className="text-zinc-400 mt-4 mb-8">
-          Thanks for reaching out! We've received your details and will be in touch soon.
-          <br /><br />
-          <span className="text-zinc-500 italic text-sm">Stay creative. We look forward to working with you.</span>
+      <div className="w-full max-w-2xl mx-auto py-12 md:py-20">
+        <div className="border-b border-black pb-3 flex items-end justify-between">
+          <span className="font-mono text-[11px] tracking-widest uppercase">Confirmation</span>
+          <span className="font-mono text-[11px] tracking-widest uppercase text-black/40">[&nbsp;01/01&nbsp;]</span>
+        </div>
+        <h2 className="pt-10 font-sans font-medium uppercase tracking-[-0.03em] leading-[0.9] text-4xl md:text-6xl">
+          Information
+          <br />
+          Received
+        </h2>
+        <p className="pt-8 text-black/60 text-sm md:text-base leading-relaxed max-w-md">
+          Thanks for reaching out! We&apos;ve received your details and will be in touch soon.
+        </p>
+        <p className="pt-3 font-mono text-[10px] tracking-widest uppercase text-black/40">
+          Stay creative — we look forward to working with you
         </p>
 
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-white text-xs uppercase tracking-[0.2em] font-medium">Want to speed things up?</p>
-          <a 
-            href="https://calendly.com/visionaireproduction/30min" 
-            target="_blank" 
+        <div className="pt-12">
+          <p className="font-mono text-[10px] tracking-widest uppercase text-black/50 pb-4">Want to speed things up?</p>
+          <a
+            href="https://calendly.com/visionaireproduction/30min"
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-black font-bold uppercase tracking-[0.2em] py-4 px-10 text-[10px] md:text-xs rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5"
+            className="inline-flex w-full md:w-auto items-center justify-between gap-10 border border-black/40 hover:bg-black hover:text-white transition-colors duration-300 px-6 py-4"
           >
-            Schedule a 30-min Call
+            <span className="font-mono text-[11px] tracking-widest uppercase">Schedule a 30-min Call</span>
+            <span className="font-mono text-[11px]">→</span>
           </a>
         </div>
       </div>
@@ -71,91 +107,42 @@ export default function LeadCaptureForm({ category }: { category: CategoryType }
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-zinc-900 border border-white/10 rounded-lg p-5 md:p-8 my-2 md:my-8 shadow-2xl relative overflow-hidden group">
-      {/* Subtle chrome gradient accent at the top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zinc-600 via-white to-zinc-600 opacity-50" />
-      
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-light text-white mb-2 tracking-widest uppercase">{config.title}</h2>
-        <p className="text-zinc-400 text-sm">{config.subtitle}</p>
+    <div className="w-full max-w-2xl mx-auto py-8 md:py-14">
+      <div className="border-b border-black pb-3 flex items-end justify-between">
+        <span className="font-mono text-[11px] tracking-widest uppercase">Inquiry</span>
+        <span className="font-mono text-[11px] tracking-widest uppercase text-black/40">[&nbsp;{config.title}&nbsp;]</span>
       </div>
 
+      <h2 className="pt-10 font-sans font-medium uppercase tracking-[-0.03em] leading-[0.9] text-4xl md:text-6xl">
+        {config.title}
+      </h2>
+      <p className="pt-4 pb-10 text-black/50 text-sm md:text-base">{config.subtitle}</p>
+
       {state?.message && !state?.success && (
-        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/50 rounded-md text-red-400 text-sm text-center">
-          {state.message}
+        <div className="mb-8 border border-black/30 px-4 py-3 font-mono text-[11px] tracking-widest uppercase text-black/80">
+          [ ! ]&nbsp;&nbsp;{state.message}
         </div>
       )}
 
-      <form action={formAction} className="flex flex-col gap-6">
+      <form action={formAction} className="flex flex-col gap-8">
         <input type="hidden" name="category" value={category} />
         <input type="hidden" name="subject" value={`${config.title} Form`} />
-        
-        <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="name" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">What's your name?</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            required 
-            placeholder="Your Name"
-            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
-          />
-        </div>
 
-        <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="contact_info" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">Email or Phone Number?</label>
-          <input 
-            type="text" 
-            id="contact_info" 
-            name="contact_info" 
-            required 
-            placeholder="How can we reach you?"
-            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
-          />
-        </div>
+        <Field id="name" name="name" label="What's your name?" placeholder="Your Name" index="01" />
+        <Field id="contact_info" name="contact_info" label="Email or Phone Number?" placeholder="How can we reach you?" index="02" />
+        <Field id="question_1" name="question_1" label={config.q1.label} placeholder={config.q1.placeholder} index="03" />
+        <Field id="question_2" name="question_2" label={config.q2.label} placeholder={config.q2.placeholder} index="04" />
+        <Field id="question_3" name="question_3" label={config.q3.label} placeholder={config.q3.placeholder} index="05" />
 
-        <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="question_1" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">{config.q1.label}</label>
-          <input 
-            type="text" 
-            id="question_1" 
-            name="question_1" 
-            required 
-            placeholder={config.q1.placeholder}
-            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
-          />
-        </div>
-
-        <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="question_2" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">{config.q2.label}</label>
-          <input 
-            type="text" 
-            id="question_2" 
-            name="question_2" 
-            required 
-            placeholder={config.q2.placeholder}
-            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
-          />
-        </div>
-
-        <div className="flex flex-col gap-2 text-center">
-          <label htmlFor="question_3" className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-300 font-medium">{config.q3.label}</label>
-          <input 
-            type="text" 
-            id="question_3" 
-            name="question_3" 
-            required 
-            placeholder={config.q3.placeholder}
-            className="bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-white text-sm text-center placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all"
-          />
-        </div>
-
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           disabled={isPending}
-          className="mt-6 w-full bg-white text-black font-semibold uppercase tracking-widest py-3.5 text-sm rounded-md hover:bg-zinc-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-center shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+          className="mt-4 w-full flex items-center justify-between border border-black/40 hover:bg-black hover:text-white transition-colors duration-300 px-6 py-4 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
         >
-          {isPending ? "Submitting..." : "Submit"}
+          <span className="font-mono text-[11px] tracking-widest uppercase">
+            {isPending ? "Submitting..." : "Submit"}
+          </span>
+          <span className="font-mono text-[11px]">→</span>
         </button>
       </form>
     </div>

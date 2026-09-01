@@ -19,34 +19,20 @@ export default async function CategoryFormPage({ params }: { params: Promise<{ c
   }
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans flex flex-col items-center p-4 md:p-8 overflow-hidden relative">
-      
-      {/* Background visual elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-zinc-800/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[100px]" />
-      </div>
+    <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white font-sans px-5 md:px-10 pb-16">
+      <header className="flex items-center justify-between py-5">
+        <Link href="/">
+          <img src="/logo.png" alt="Visionaire" className="h-8 md:h-10 w-auto object-contain hover:opacity-70 transition-opacity" />
+        </Link>
+        <Link
+          href="/connect"
+          className="font-mono text-[11px] tracking-widest uppercase hover:opacity-60 transition-opacity"
+        >
+          <span className="opacity-40">[&nbsp;</span>← Back<span className="opacity-40">&nbsp;]</span>
+        </Link>
+      </header>
 
-      <div className="w-full max-w-4xl mt-4 md:mt-8 z-10">
-        <div className="flex flex-col items-center justify-center mb-6 md:mb-8 gap-2 md:gap-4">
-          <Link href="/">
-            <img 
-              src="/logo.png" 
-              alt="Visionaire Logo" 
-              className="h-16 md:h-28 object-contain invert hover:opacity-80 transition-opacity"
-            />
-          </Link>
-          <p className="text-zinc-500 text-[10px] md:text-xs tracking-widest uppercase">* Application Form *</p>
-        </div>
-
-        <LeadCaptureForm category={category as "brand" | "artist" | "narrative" | "personal"} />
-        
-        <div className="mt-8 flex justify-center">
-          <Link href="/connect" className="text-zinc-500 hover:text-white text-xs uppercase tracking-[0.2em] transition-colors duration-300">
-            ← Back to Categories
-          </Link>
-        </div>
-      </div>
+      <LeadCaptureForm category={category as "brand" | "artist" | "narrative" | "personal"} />
     </main>
   );
 }
