@@ -742,15 +742,19 @@ export default function Home() {
                   )
                 )}
               </motion.div>
-            </div>
 
-            {/* Fashion work grid — steady center panel for easier viewing while the room spins */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[64%] md:w-[46%] grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2">
-              {works.slice(0, 8).map((w) => (
-                <div key={w.src} className="aspect-video bg-zinc-900 overflow-hidden shadow-2xl">
-                  <NativeVideo src={w.src} />
-                </div>
-              ))}
+              {/* Fashion work 2x2 — a wall inside the room, at depth; the rotating
+                  panels sweep in front of and behind it */}
+              <div
+                className="absolute left-1/2 top-1/2 w-[52%] md:w-[34%] grid grid-cols-2 gap-1.5 md:gap-2"
+                style={{ transform: "translate(-50%, -50%) translateZ(-260px)" }}
+              >
+                {works.slice(0, 4).map((w) => (
+                  <div key={w.src} className="aspect-video bg-zinc-900 overflow-hidden">
+                    <NativeVideo src={w.src} />
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* vignette so the type reads */}
