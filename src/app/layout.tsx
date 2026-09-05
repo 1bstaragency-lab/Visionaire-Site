@@ -25,11 +25,11 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: 'Visionaire Productions — Miami Music Videos, Commercials, Short Form',
+  title: 'Visionaire Productions — Music Videos, Commercials, Short Form',
   description: 'Cinematic video production for artists and brands. Clients include Converse, ASICS, GAP.',
   openGraph: {
     title: 'Visionaire Productions',
-    description: 'Miami-based video production — music videos, commercials, short form.',
+    description: 'Video production between New York, LA, and Miami — music videos, commercials, short form.',
     url: 'https://visionsaire.com',
     siteName: 'Visionaire Productions',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],

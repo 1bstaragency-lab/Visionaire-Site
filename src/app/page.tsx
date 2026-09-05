@@ -50,7 +50,7 @@ const faqs = [
     n: "03",
     q: "WHERE ARE YOU BASED? DO YOU TRAVEL?",
     tag: "LOCATION",
-    a: "We're based in Miami, FL, and travel worldwide for productions. Travel costs are scoped into the project quote up front.",
+    a: "We work between New York, LA, and Miami, and travel worldwide for productions. Travel costs are scoped into the project quote up front.",
   },
   {
     n: "04",
@@ -353,7 +353,7 @@ function MiamiClock() {
   return (
     <div className="text-right font-mono text-[10px] tracking-widest uppercase leading-relaxed">
       <p className="tabular-nums">{time || "00:00:00"} EST</p>
-      <p>Miami, FL</p>
+      <p>New York — LA — Miami</p>
     </div>
   );
 }
@@ -649,8 +649,8 @@ export default function Home() {
           <div className="md:col-span-9">
             <Reveal delay={0.1}>
               <p className="font-sans font-medium uppercase tracking-tight leading-tight text-2xl md:text-4xl max-w-4xl">
-                Visionaire is a Miami-based creative agency and production house working at the intersection of
-                music, fashion, and film — directing and producing cinematic work where concept, motion, and execution come together as
+                Visionaire is a creative agency and production house — New York, LA, and Miami — working at the
+                intersection of music, fashion, and film — directing and producing cinematic work where concept, motion, and execution come together as
                 one cohesive vision.
               </p>
             </Reveal>
@@ -658,7 +658,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-x-10 gap-y-2 pt-10 font-mono text-[10px] tracking-widest uppercase text-black/40">
                 <span>Visionaire</span>
                 <span>{new Date().getFullYear()}</span>
-                <span>Miami, FL</span>
+                <span>New York / LA / Miami</span>
                 <span>映像 制作</span>
               </div>
             </Reveal>
@@ -730,31 +730,30 @@ export default function Home() {
                 animate={{ rotateY: -360 }}
                 transition={{ repeat: Infinity, duration: 48, ease: "linear" }}
               >
-                {[works[0], works[8], works[3], works[10], works[4], works[13], works[5], works[11]].map(
+                {/* Fashion 2x2 wall — one face of the rotating room */}
+                <div
+                  className="absolute w-[440px] -ml-[220px] -mt-[126px] grid grid-cols-2 gap-2"
+                  style={{ transform: "rotateY(0deg) translateZ(-480px)" }}
+                >
+                  {works.slice(0, 4).map((w) => (
+                    <div key={w.src} className="aspect-video bg-zinc-900 overflow-hidden">
+                      <NativeVideo src={w.src} />
+                    </div>
+                  ))}
+                </div>
+                {/* Single-work walls around the rest of the ring */}
+                {[works[8], works[4], works[10], works[5], works[13], works[6], works[11]].map(
                   (w, i) => (
                     <div
                       key={w.src}
                       className="absolute w-[340px] h-[191px] -ml-[170px] -mt-[96px] bg-zinc-900 overflow-hidden opacity-85"
-                      style={{ transform: `rotateY(${i * 45}deg) translateZ(-480px)` }}
+                      style={{ transform: `rotateY(${(i + 1) * 45}deg) translateZ(-480px)` }}
                     >
                       <NativeVideo src={w.src} />
                     </div>
                   )
                 )}
               </motion.div>
-
-              {/* Fashion work 2x2 — a wall inside the room, at depth; the rotating
-                  panels sweep in front of and behind it */}
-              <div
-                className="absolute left-1/2 top-1/2 w-[52%] md:w-[34%] grid grid-cols-2 gap-1.5 md:gap-2"
-                style={{ transform: "translate(-50%, -50%) translateZ(-260px)" }}
-              >
-                {works.slice(0, 4).map((w) => (
-                  <div key={w.src} className="aspect-video bg-zinc-900 overflow-hidden">
-                    <NativeVideo src={w.src} />
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* vignette so the type reads */}
