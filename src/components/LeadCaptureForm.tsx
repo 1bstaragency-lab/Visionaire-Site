@@ -2,6 +2,7 @@
 
 import React, { useActionState } from "react";
 import { submitLeadEntry } from "@/app/actions/leads";
+import BookingEmbed from "@/components/BookingEmbed";
 
 const initialState = {
   success: false,
@@ -91,16 +92,16 @@ export default function LeadCaptureForm({ category }: { category: CategoryType }
         </p>
 
         <div className="pt-12">
-          <p className="font-mono text-[10px] tracking-widest uppercase text-black/50 pb-4">Want to speed things up?</p>
-          <a
-            href="https://calendly.com/visionaireproduction/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full md:w-auto items-center justify-between gap-10 border border-black/40 hover:bg-black hover:text-white transition-colors duration-300 px-6 py-4"
-          >
-            <span className="font-mono text-[11px] tracking-widest uppercase">Schedule a 30-min Call</span>
-            <span className="font-mono text-[11px]">→</span>
-          </a>
+          <div className="flex items-end justify-between border-b border-black pb-3 mb-6">
+            <span className="font-mono text-[11px] tracking-widest uppercase">Book a Call</span>
+            <span className="font-mono text-[11px] tracking-widest uppercase text-black/40">
+              [&nbsp;30 Min&nbsp;]
+            </span>
+          </div>
+          <p className="font-mono text-[10px] tracking-widest uppercase text-black/50 pb-6">
+            Want to speed things up? Pick a time below
+          </p>
+          <BookingEmbed />
         </div>
       </div>
     );
