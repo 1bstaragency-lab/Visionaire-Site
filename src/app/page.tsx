@@ -36,36 +36,42 @@ const stats = [
 const faqs = [
   {
     n: "01",
+    q: "HOW DID VISIONAIRE START?",
+    tag: "ORIGIN",
+    a: "Visionaire started as a director duo — two directors sharing one eye behind the camera. That partnership is still the core of how we work: every project is shaped by more than one perspective before it ever reaches a set.",
+  },
+  {
+    n: "02",
     q: "WHAT SERVICES DO YOU OFFER?",
     tag: "SERVICES",
     a: "Full-scale video production — music videos, commercials, brand films, and short-form social content. From concept and creative direction through shooting, editing, color, and delivery.",
   },
   {
-    n: "02",
+    n: "03",
     q: "WHAT IS YOUR TYPICAL TURNAROUND TIME?",
     tag: "TIMELINE",
     a: "Most projects deliver within 2–4 weeks from the shoot date, depending on scope. Rush deliveries are available for campaigns on a deadline.",
   },
   {
-    n: "03",
+    n: "04",
     q: "WHERE ARE YOU BASED? DO YOU TRAVEL?",
     tag: "LOCATION",
     a: "We work between New York, LA, and Miami, and travel worldwide for productions. Travel costs are scoped into the project quote up front.",
   },
   {
-    n: "04",
+    n: "05",
     q: "CAN YOU HANDLE BOTH CREATIVE AND PRODUCTION?",
     tag: "WORKFLOW",
     a: "Yes — that's the point. One team owns the idea and the execution, so nothing gets lost between the treatment and the final cut.",
   },
   {
-    n: "05",
+    n: "06",
     q: "WHO HAVE YOU WORKED WITH?",
     tag: "CLIENTS",
     a: "Converse, Comme des Garçons, SKIMS, ASICS, adidas, Timberland, Agent Provocateur, Levi's, and GAP — alongside recording artists including Scotty Apex, Laylow!, and Xrarestboy.",
   },
   {
-    n: "06",
+    n: "07",
     q: "WHAT DOES YOUR PROCESS LOOK LIKE?",
     tag: "PROCESS",
     a: "Conversation → treatment → pre-production → shoot → post → delivery. You see the work at every stage, and revisions are built into the schedule.",
@@ -649,9 +655,10 @@ export default function Home() {
           <div className="md:col-span-9">
             <Reveal delay={0.1}>
               <p className="font-sans font-medium uppercase tracking-tight leading-tight text-2xl md:text-4xl max-w-4xl">
-                Visionaire is a creative agency and production house — New York, LA, and Miami — working at the
-                intersection of music, fashion, and film — directing and producing cinematic work where concept, motion, and execution come together as
-                one cohesive vision.
+                Visionaire started as a director duo and grew into a creative agency and production house — New
+                York, LA, and Miami — working at the intersection of music, fashion, and film, directing and
+                producing cinematic work where concept, motion, and execution come together as one cohesive
+                vision.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
