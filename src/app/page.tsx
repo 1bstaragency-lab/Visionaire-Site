@@ -314,7 +314,7 @@ function Soundtrack() {
 
   return (
     <>
-      <audio ref={audioRef} src="/audio/theme.mp3" loop preload="auto" onError={() => setAvailable(false)} />
+      <audio ref={audioRef} src="/audio/theme.mp3" loop preload="metadata" onError={() => setAvailable(false)} />
       <button
         onClick={() => {
           const audio = audioRef.current;
