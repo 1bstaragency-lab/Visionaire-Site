@@ -291,22 +291,29 @@ function Soundtrack() {
     if (!audio) return;
     audio.volume = 0.35;
 
-    const tryPlay = () => audio.play().then(() => setPlaying(true)).catch(() => {});
+    // Only a real gesture (click/tap/key) can unlock autoplay-with-sound in
+    // Chrome/Safari — a scroll does not count. Listeners stay armed until a
+    // play() call actually succeeds, so an early scroll can't burn the only
+    // attempt and leave the page silent for the rest of the visit.
+    const tryPlay = () =>
+      audio
+        .play()
+        .then(() => {
+          setPlaying(true);
+          cleanup();
+        })
+        .catch(() => {});
     tryPlay();
 
-    // Autoplay blocked → arm one-time first-interaction starters.
     const start = () => {
       if (audio.paused && !audio.dataset.userPaused) tryPlay();
-      cleanup();
     };
     const cleanup = () => {
       window.removeEventListener("pointerdown", start);
       window.removeEventListener("keydown", start);
-      window.removeEventListener("scroll", start);
     };
     window.addEventListener("pointerdown", start);
     window.addEventListener("keydown", start);
-    window.addEventListener("scroll", start, { passive: true });
     return cleanup;
   }, []);
 
