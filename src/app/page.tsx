@@ -27,9 +27,9 @@ const services = [
 ];
 
 const stats = [
-  { n: "01", value: 10, suffix: "+", label: "CLIENT COLLABORATIONS" },
+  { n: "01", value: 50, suffix: "+", label: "CLIENT COLLABORATIONS" },
   { n: "02", value: 5, suffix: "+", label: "YEARS IN PRACTICE" },
-  { n: "03", value: 25, suffix: "+", label: "DELIVERED WORKS" },
+  { n: "03", value: 100, suffix: "+", label: "DELIVERED WORKS" },
   { n: "04", value: 100, suffix: "%", label: "END-TO-END DELIVERY" },
 ];
 
