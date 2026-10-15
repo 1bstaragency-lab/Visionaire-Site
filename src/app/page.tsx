@@ -145,11 +145,11 @@ const fanCards = [
   { src: "/videos/converse.mp4", w: 240, h: 144 },
   { src: "/videos/youtube/aUiCkuA4GyY.mp4", w: 240, h: 144 },
   { src: "/videos/youtube/3T3Dhc5fXxc.mp4", w: 240, h: 144 },
-  { src: "/videos/youtube/V7eHmKc31Bg.mp4", w: 240, h: 144 },
+  { src: "/videos/finale-andre.mp4", w: 240, h: 144 },
   { src: "/videos/youtube/3adRUaYNmJ4.mp4", w: 240, h: 144 },
   { src: "/videos/youtube/L-iVcooZdt8.mp4", w: 240, h: 144 },
   { src: "/videos/asics.mp4", w: 240, h: 144 },
-  { src: "/videos/youtube/QyLYTi9qkSg.mp4", w: 240, h: 144 },
+  { src: "/videos/camilusrose-life-and-her-friends.mp4", w: 240, h: 144 },
 ];
 
 function HeroFan() {
@@ -756,7 +756,7 @@ export default function Home() {
                   ))}
                 </div>
                 {/* Single-work walls around the rest of the ring */}
-                {[works[8], works[4], works[10], works[5], works[13], works[6], works[11]].map(
+                {[works[8], works[16], works[10], works[17], works[13], works[6], works[11]].map(
                   (w, i) => (
                     <div
                       key={w.src}
