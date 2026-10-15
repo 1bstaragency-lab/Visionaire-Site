@@ -22,4 +22,6 @@ export const works: Work[] = [
   { title: "TRUST", src: "/videos/youtube/mpk0K9XMtOM.mp4", category: "MUSIC VIDEO", client: "LAYLOW!" },
   { title: "WHEREVER U ARE", src: "/videos/youtube/3mrZBy57Fk0.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX & JAY VERSACE" },
   { title: "FADE", src: "/videos/youtube/ckxOuNMgCq0.mp4", category: "MUSIC VIDEO", client: "SCOTTY APEX" },
+  { title: "FINALE", src: "/videos/finale-andre.mp4", category: "MUSIC VIDEO", client: "ANDRE" },
+  { title: "LIFE AND HER FRIENDS", src: "/videos/camilusrose-life-and-her-friends.mp4", category: "MUSIC VIDEO", client: "CAMILUSROSE" },
 ];
