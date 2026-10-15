@@ -149,6 +149,7 @@ const fanCards = [
   { src: "/videos/youtube/3adRUaYNmJ4.mp4", w: 240, h: 144 },
   { src: "/videos/youtube/L-iVcooZdt8.mp4", w: 240, h: 144 },
   { src: "/videos/asics.mp4", w: 240, h: 144 },
+  { src: "/videos/stash-tings-visualizer.mp4", w: 240, h: 144 },
   { src: "/videos/camilusrose-life-and-her-friends.mp4", w: 240, h: 144 },
 ];
 
